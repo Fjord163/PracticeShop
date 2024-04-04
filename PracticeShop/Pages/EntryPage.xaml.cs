@@ -2,6 +2,8 @@
 using DBConnection.Classes;
 using Npgsql;
 using NpgsqlTypes;
+using PracticeShop.Pages;
+using PracticeShop;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -83,8 +85,9 @@ namespace PracticeShop.Pages
             }
             if (tblogin.StartsWith("+7 "))
             {
-                NpgsqlCommand cmd = Connection.GetCommand("SELECT \"Phone\", \"FirstName\", \"LastName\", \"Patronymic\",\"DateBirth\",\"Password\", \"LoyaltyCard\" FROM \"Client\"" +
-                "WHERE  \"Phone\" = @log AND \"Password\" = @pass");
+                NpgsqlCommand cmd = Connection.GetCommand("SELECT \"Client\".\"Phone\", \"Client\".\"FirstName\", \"Client\".\"LastName\", \"Client\".\"Patronymic\",\"Client\".\"DateBirth\"," +
+                    "\"Client\".\"Password\", \"Client\".\"LoyaltyCard\", \"LoyaltyCard\".\"Bonuses\" FROM \"Client\", \"LoyaltyCard\"" +
+                "WHERE \"Client\".\"LoyaltyCard\" = \"LoyaltyCard\".\"NumberCard\" AND \"Phone\" = @log AND \"Password\" = @pass");
                 cmd.Parameters.AddWithValue("@log", NpgsqlDbType.Varchar, tbLogin.Text.Trim());
                 cmd.Parameters.AddWithValue("@pass", NpgsqlDbType.Varchar, pbPassword.Password.Trim());
                 NpgsqlDataReader result = cmd.ExecuteReader();
@@ -102,6 +105,7 @@ namespace PracticeShop.Pages
                         DateBirth = result.GetDateTime(4),
                         Password = result.GetString(5),
                         LoyaltyCard = result.GetInt32(6),
+                        Bonuses = result.GetInt32(7),
                     };
                     result.Close();
                     NavigationService.Navigate(new AccountClient());
@@ -115,3 +119,27 @@ namespace PracticeShop.Pages
         }
     }
 }
+
+
+//NpgsqlCommand cmd = Connection.GetCommand("SELECT \"Phone\", \"FirstName\", \"LastName\", \"Patronymic\",\"DateBirth\",\"Password\", \"LoyaltyCard\",  FROM \"Client\", \"LoyaltyCard\"" +
+//               "WHERE  \"Phone\" = @log AND \"Password\" = @pass");
+//cmd.Parameters.AddWithValue("@log", NpgsqlDbType.Varchar, tbLogin.Text.Trim());
+//cmd.Parameters.AddWithValue("@pass", NpgsqlDbType.Varchar, pbPassword.Password.Trim());
+//NpgsqlDataReader result = cmd.ExecuteReader();
+
+//if (result.HasRows)
+//{
+//    result.Read();
+
+//    Connection.client = new Client()
+//    {
+//        Phone = result.GetString(0),
+//        FirstName = result.GetString(1),
+//        LastName = result.GetString(2),
+//        Patronymic = result.GetString(3),
+//        DateBirth = result.GetDateTime(4),
+//        Password = result.GetString(5),
+//        LoyaltyCard = result.GetInt32(6),
+//    };
+//    result.Close();
+//    NavigationService.Navigate(new AccountClient());

@@ -27,7 +27,7 @@ namespace PracticeShop.Pages
             tbDateBirth.Text = Connection.client.DateBirth.ToString();
             tbLoyaltyCard.Text = Connection.client.LoyaltyCard.ToString();
             tbPhone.Text = Connection.client.Phone;
-            tbBonuses.Text = Connection.card.Bonuses.ToString();
+            tbBonuses.Text = Connection.client.Bonuses.ToString();
         }
     }
 }

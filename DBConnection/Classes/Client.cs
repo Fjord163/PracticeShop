@@ -9,7 +9,7 @@ namespace DBConnection.Classes
     public class Client
     {
         public Client() { }
-        public Client(string phone, string firstName, string lastName, string patronymic, DateTime dateBirth, string password, int loyaltyCard)
+        public Client(string phone, string firstName, string lastName, string patronymic, DateTime dateBirth, string password, int loyaltyCard, int bonuses)
         {
             Phone = phone;
             FirstName = firstName;
@@ -18,6 +18,7 @@ namespace DBConnection.Classes
             DateBirth = dateBirth;
             Password = password;
             LoyaltyCard = loyaltyCard;
+            Bonuses = bonuses;
         }
 
         public string Phone { get; set; }
@@ -27,5 +28,7 @@ namespace DBConnection.Classes
         public DateTime DateBirth { get; set; }
         public string Password { get; set; }
         public int LoyaltyCard { get; set; }
+        public int Bonuses { get; set; }
+
     }
 }
