@@ -14,45 +14,49 @@
             <ColumnDefinition Width="400"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10" CornerRadius="10" Padding="5">
+        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="10" CornerRadius="10" >
             <StackPanel >
-                <Label Content="Профиль" HorizontalAlignment="Center" FontSize="23" FontWeight="Medium" Margin="5 0 5 0"></Label>
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10 10 0 0" Padding="5">
+                    <Label Content="Профиль" HorizontalAlignment="Center" FontSize="23" FontWeight="Medium" Margin="5 0 5 0"></Label>
+                </Border>
 
-                <Label Content="Личные дынные" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Margin="5 0 5 0"></Label>
-            
-                <DockPanel>
-                    <Label Content="Фамилия:"></Label>
-                    <TextBlock Name="tbLastName" VerticalAlignment="Center"></TextBlock>
-                </DockPanel>
+                <StackPanel Margin="5">
+                    <Label Content="Личные дынные" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Margin="5 0 5 0"></Label>
 
-                <DockPanel>
-                    <Label Content="Имя:"></Label>
-                    <TextBlock Name="tbFirstName" VerticalAlignment="Center"></TextBlock>
-                </DockPanel>
+                    <DockPanel>
+                        <Label Content="Фамилия:"></Label>
+                        <TextBlock Name="tbLastName" VerticalAlignment="Center"></TextBlock>
+                    </DockPanel>
 
-                <DockPanel>
-                    <Label Content="Отчество:"></Label>
-                    <TextBlock Name="tbPatronymic" VerticalAlignment="Center"></TextBlock>
-                </DockPanel>
+                    <DockPanel>
+                        <Label Content="Имя:"></Label>
+                        <TextBlock Name="tbFirstName" VerticalAlignment="Center"></TextBlock>
+                    </DockPanel>
 
-                <DockPanel>
-                    <Label Content="Дата рождения:"></Label>
-                    <TextBlock Name="tbDateBirth" VerticalAlignment="Center"></TextBlock>
-                </DockPanel>
+                    <DockPanel>
+                        <Label Content="Отчество:"></Label>
+                        <TextBlock Name="tbPatronymic" VerticalAlignment="Center"></TextBlock>
+                    </DockPanel>
 
-                <DockPanel>
-                    <Label Content="Номер карты лояльности:" ></Label>
-                    <TextBlock Name="tbLoyaltyCard" VerticalAlignment="Center"></TextBlock>
-                </DockPanel>
+                    <DockPanel>
+                        <Label Content="Дата рождения:"></Label>
+                        <TextBlock Name="tbDateBirth" VerticalAlignment="Center"></TextBlock>
+                    </DockPanel>
 
-                <DockPanel>
-                    <Label Content="Номер телефона:" ></Label>
-                    <TextBlock Name="tbPhone" VerticalAlignment="Center"></TextBlock>
-                </DockPanel>
-                <DockPanel>
-                    <Label Content="Бонусы:"  FontWeight="Bold"></Label>
-                    <TextBlock Name="tbBonuses" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
-                </DockPanel>
+                    <DockPanel>
+                        <Label Content="Номер карты лояльности:" ></Label>
+                        <TextBlock Name="tbLoyaltyCard" VerticalAlignment="Center"></TextBlock>
+                    </DockPanel>
+
+                    <DockPanel>
+                        <Label Content="Номер телефона:" ></Label>
+                        <TextBlock Name="tbPhone" VerticalAlignment="Center"></TextBlock>
+                    </DockPanel>
+                    <DockPanel>
+                        <Label Content="Бонусы:"  FontWeight="Bold"></Label>
+                        <TextBlock Name="tbBonuses" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+                    </DockPanel>
+                </StackPanel>
             </StackPanel>
         </Border>
     </Grid>

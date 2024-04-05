@@ -17,6 +17,7 @@ namespace PracticeShop
         public static Client client;
         public static CreateLoyaltyCard loyaltyCard;
         public static LoyaltyCard card;
+        public static Product product;
 
 
         public static NpgsqlConnection connection;
