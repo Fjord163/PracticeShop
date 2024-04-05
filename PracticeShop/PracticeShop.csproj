@@ -104,6 +104,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\Sales.xaml.cs">
+      <DependentUpon>Sales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowAddProduct.xaml.cs">
+      <DependentUpon>WindowAddProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowUpdateProduct.xaml.cs">
+      <DependentUpon>WindowUpdateProduct.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -134,6 +143,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Sales.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowAddProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowUpdateProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,6 +8,10 @@ namespace DBConnection.Classes
 {
     public class Product
     {
+        public Product()
+        {
+        }
+
         public Product(string article, string name, string unit)
         {
             Article = article;

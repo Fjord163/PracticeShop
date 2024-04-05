@@ -18,7 +18,7 @@ namespace PracticeShop
         public static CreateLoyaltyCard loyaltyCard;
         public static LoyaltyCard card;
         public static Product product;
-
+        public static Product product2;
 
         public static NpgsqlConnection connection;
 
@@ -42,6 +42,7 @@ namespace PracticeShop
         public static ObservableCollection<Client> clients { get; set; } = new ObservableCollection<Client>();
         public static ObservableCollection<CreateLoyaltyCard> loyaltyCards { get; set; } = new ObservableCollection<CreateLoyaltyCard>();
         public static ObservableCollection<LoyaltyCard> cards { get; set; } = new ObservableCollection<LoyaltyCard>();
+        public static ObservableCollection<UnitMeasure> unitMeasures { get; set; } = new ObservableCollection<UnitMeasure>();
 
         public static void SelectProduct()
         {
@@ -56,6 +57,23 @@ namespace PracticeShop
                             result.GetString(0),
                             result.GetString(1),
                             result.GetString(2)
+                        ));
+                }
+            }
+            result.Close();
+        }
+
+        public static void SelectUnitMeasure()
+        {
+            NpgsqlCommand cmd = GetCommand("SELECT \"Name\" FROM \"UnitMeasure\"");
+            NpgsqlDataReader result = cmd.ExecuteReader();
+
+            if (result.HasRows)
+            {
+                while (result.Read())
+                {
+                    unitMeasures.Add(new UnitMeasure(
+                            result.GetString(0)
                         ));
                 }
             }
@@ -90,6 +108,24 @@ namespace PracticeShop
                 loyaltyCard = new CreateLoyaltyCard()
                 {
                     NumberCard = result.GetInt32(0),
+                };
+            }
+            result.Close();
+        }
+
+        public static void SelectLastArticleProduct()
+        {
+            NpgsqlCommand cmd = GetCommand("SELECT \"Article\", \"Name\", \"Unit\" FROM \"Product\" ORDER BY \"Article\" DESC LIMIT 1");
+            NpgsqlDataReader result = cmd.ExecuteReader();
+
+            if (result.HasRows)
+            {
+                result.Read();
+                product = new Product()
+                {
+                    Article = result.GetString(0),
+                    Name = result.GetString(1),
+                    Unit = result.GetString(2)
                 };
             }
             result.Close();

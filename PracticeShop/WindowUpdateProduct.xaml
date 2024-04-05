@@ -1,0 +1,35 @@
+﻿<Window x:Class="PracticeShop.WindowUpdateProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticeShop"
+        mc:Ignorable="d"
+        Title="WindowUpdateProduct" Height="250" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Margin="5" Grid.ColumnSpan="2">
+            <DockPanel Margin="5">
+                <Label Content="Название" Width="100"></Label>
+                <TextBox Name="tbNameAddProduct"></TextBox>
+            </DockPanel>
+
+            <DockPanel Margin="5">
+                <Label Content="Ед. измерения" Width="100"></Label>
+                <ComboBox Name="cbAddUnit" DisplayMemberPath="Name"></ComboBox>
+            </DockPanel>
+        </StackPanel>
+        <ListView Name="lvNameProduct" DisplayMemberPath="Name" Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="lvNameProduct_SelectionChanged"></ListView>
+        <Button Content="Изменить" Grid.ColumnSpan="2" Grid.Row="2" Background="White" VerticalAlignment="Bottom" Margin="5 0 5 10" Click="Button_Click"></Button>
+    </Grid>
+</Window>
