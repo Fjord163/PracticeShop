@@ -113,10 +113,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\Division.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\CreateLoyaltyCard.cs" />
+    <Compile Include="Classes\Gender.cs" />
     <Compile Include="Classes\LoyaltyCard.cs" />
+    <Compile Include="Classes\Post.cs" />
     <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\Sales.cs" />
+    <Compile Include="Classes\SalesExtendedVersion.cs" />
     <Compile Include="Classes\UnitMeasure.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

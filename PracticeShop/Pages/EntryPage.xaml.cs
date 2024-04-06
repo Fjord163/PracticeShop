@@ -69,10 +69,10 @@ namespace PracticeShop.Pages
                     switch (Connection.employee.Post)
                     {
                         case "Админ":
-                            NavigationService.Navigate(new AccountingProduct());
+                            NavigationService.Navigate(new AccountingEmployee());
                             break;
                         case "Кадровый инспектор":
-                            NavigationService.Navigate(new AccountingProduct());
+                            NavigationService.Navigate(new AccountingEmployee());
                             break;
                         case "Кладовщик":
                             NavigationService.Navigate(new AccountingProduct());

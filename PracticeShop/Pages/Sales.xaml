@@ -15,16 +15,14 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <ListView Grid.Row="2">
+        
+        
+        <ListView Name="lvSales" Grid.Row="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=ID}" Header=" Номер "></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Product}" Header=" Продукт " ></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ID}" Header="№"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Product}" Header=" Артикул товара " ></GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Quantity}" Header=" Количство "></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=DateTime}" Header=" Дата и время "></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Division}" Header=" Склад "></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Employee}" Header=" Сотрудник "></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Client}" Header=" Клиент "></GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header=" Цена "></GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=ЕotalСost}" Header=" Общая стоимость "></GridViewColumn>
                 </GridView>

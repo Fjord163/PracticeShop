@@ -104,11 +104,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\AccountingEmployee.xaml.cs">
+      <DependentUpon>AccountingEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Sales.xaml.cs">
       <DependentUpon>Sales.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowAddProduct.xaml.cs">
       <DependentUpon>WindowAddProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowEmployeeAdd.xaml.cs">
+      <DependentUpon>WindowEmployeeAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowEmployeeUpdate.xaml.cs">
+      <DependentUpon>WindowEmployeeUpdate.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowUpdateProduct.xaml.cs">
       <DependentUpon>WindowUpdateProduct.xaml</DependentUpon>
@@ -127,6 +136,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\AccountClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AccountingEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +164,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowAddProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowEmployeeAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowEmployeeUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
